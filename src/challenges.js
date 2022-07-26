@@ -124,8 +124,27 @@ function decode(paraDecodificar) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(arrayEntrada, stringEntrada) {
+let ordenado = arrayEntrada.sort();
+let tecnologias = [];
+let cont = 0;
+if (arrayEntrada.length === 0)
+{
+  let erro = "Vazio!";
+  return erro;
+}
+else {
+  for(let index of ordenado) {
+    let itens = {
+        tech: null,
+        name: null
+      }
+      itens.tech = index;  
+      itens.name = stringEntrada;
+      tecnologias.push(itens);
+      }
+    return tecnologias;
+  }   
 }
 
 module.exports = {
