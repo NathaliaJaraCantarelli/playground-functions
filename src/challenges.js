@@ -1,6 +1,6 @@
 // Desafio 1
 function compareTrue(entrada1, entrada2) {
-  if((entrada1===true)&&(entrada2===true)){
+  if ((entrada1 === true) && (entrada2 === true)){
     return true;
   } else {
     return false;
@@ -9,7 +9,7 @@ function compareTrue(entrada1, entrada2) {
 
 // Desafio 2
 function calcArea(base, altura) {
-  let area = (base * altura)/2;
+  let area = (base * altura) / 2;
   return area;  
 }
 
@@ -32,8 +32,26 @@ function footballPoints(vitorias, empates) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(numeros) {
+  let maior = 0;
+  let cont = 0;
+  for (let index in numeros) {
+      console.log(numeros[index])
+    if (index == 0) {
+      maior = numeros[index];
+      cont = 1;
+    }
+    else if ((numeros[index]) > maior) {
+      maior = numeros[index];
+      cont = 1;
+        console.log(maior, cont);
+    }
+    else if ((numeros[index]) === maior) {
+      cont += 1;
+        console.log(maior, cont);
+    }
+  }
+  return cont;
 }
 
 // Desafio 7
