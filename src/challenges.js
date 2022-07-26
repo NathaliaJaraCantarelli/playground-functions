@@ -106,11 +106,21 @@ function fizzBuzz(entradaArray) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(paraCodificar) {
+  paraCodificar = paraCodificar.replace(/a/g, "1");
+  paraCodificar = paraCodificar.replace(/e/g, "2");
+  paraCodificar = paraCodificar.replace(/i/g, "3");
+  paraCodificar = paraCodificar.replace(/o/g, "4");
+  let saida = paraCodificar.replace(/u/g, "5");
+  return saida;
 }
-function decode() {
-  // seu código aqui
+function decode(paraDecodificar) {
+  paraDecodificar = paraDecodificar.replace(/1/g, "a");
+  paraDecodificar = paraDecodificar.replace(/2/g, "e");
+  paraDecodificar = paraDecodificar.replace(/3/g, "i");
+  paraDecodificar = paraDecodificar.replace(/4/g, "o");
+  let saida = paraDecodificar.replace(/5/g, "u");
+  return saida;
 }
 
 // Desafio 10
