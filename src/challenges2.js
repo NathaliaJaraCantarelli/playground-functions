@@ -15,7 +15,7 @@ function generatePhoneNumber(numeros) {
     resposta = 'não é possível gerar um número de telefone com esses valores';
   } else {
     resposta = telefone.concat(numPronto.substring(0, 2), ') ', numPronto.substring(2, 7));
-    resposta = telefone.concat('-', numPronto.substring(7, 12));
+    resposta = resposta.concat('-', numPronto.substring(7, 12));
   }
   return resposta;
 }
@@ -50,10 +50,11 @@ function hydrate(recebida) {
       }
     }
   }
+  let somaString = String(soma)
   if (soma === 1) {
-    hidratacao = soma.concat(' copo de água');
+    hidratacao = somaString.concat(' copo de água');
   } else {
-    hidratacao = soma.concat(' copos de água');
+    hidratacao = somaString.concat(' copos de água');
   }
   return hidratacao;
 }
