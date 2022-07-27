@@ -21,7 +21,7 @@ function splitSentence(frase) {
 
 // Desafio 4
 function concatName(arrayConcat) {
-  let fraseConcat = arrayConcat[arrayConcat.length - 1] + ", " + arrayConcat[0];
+  let fraseConcat = arrayConcat[arrayConcat.length - 1] + ', ' + arrayConcat[0];
   return fraseConcat;
 }
 
@@ -33,13 +33,10 @@ function footballPoints(vitorias, empates) {
 
 // Desafio 6
 function highestCount(numeros) {
-  let maior = 0;
+  let maior = null;
   let cont = 0;
   for (let index in numeros) {
-    if (index === 0) {
-      maior = numeros[index];
-      cont = 1;
-    } else if ((numeros[index]) > maior) {
+    if ((maior === null) || ((numeros[index]) > maior)) {
       maior = numeros[index];
       cont = 1;
     } else if ((numeros[index]) === maior) {
@@ -51,29 +48,17 @@ function highestCount(numeros) {
 
 // Desafio 7
 function catAndMouse(ratoP, gato1P, gato2P) {
-  let distanciaGato1, distanciaGato2, frase;
-  if (ratoP > gato1P) {
-    distanciaGato1 = ratoP - gato1P;
-  }
-  else
-  {
-    distanciaGato1 = gato1P - ratoP;
-  }
-  if (ratoP > gato2P) {
-    distanciaGato2 = ratoP - gato2P;
-  }
-  else
-  {
-    distanciaGato2 = gato2P - ratoP;
-  }
+  let distanciaGato1
+  let distanciaGato2
+  let frase;
+  distanciaGato1 = Math.abs(ratoP - gato1P);
+  distanciaGato2 = Math.abs(ratoP - gato2P);
   if (distanciaGato1 > distanciaGato2) {
-    frase = "cat2";
-  }
-  else if (distanciaGato1 < distanciaGato2) {
-    frase = "cat1";
-  }
-  else {
-    frase = "os gatos trombam e o rato foge";
+    frase = 'cat2';
+  } else if (distanciaGato1 < distanciaGato2) {
+    frase = 'cat1';
+  } else {
+    frase = 'os gatos trombam e o rato foge';
   }
   return frase;
 }
