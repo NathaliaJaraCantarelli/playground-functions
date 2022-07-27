@@ -32,8 +32,26 @@ function generatePhoneNumber(numeros) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(linhaA, linhaB, linhaC) {
+  if (linhaA < (linhaB+linhaC)) {
+    if (linhaA > Math.abs(linhaB-linhaC)){
+      return true;
+    }
+    else {return false;}
+  }
+  else if (linhaB < (linhaA+linhaC)) {
+    if (linhaB > Math.abs(linhaA-linhaC)){
+      return true;
+    }
+    else {return false;}
+  }
+  else if (linhaC < (linhaA+linhaB)) {
+    if (linhaC > Math.abs(linhaA-linhaB)){
+      return true;
+    }
+    else {return false;}
+  }
+  else {return false;}
 }
 
 // Desafio 13
