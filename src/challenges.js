@@ -48,8 +48,8 @@ function highestCount(numeros) {
 
 // Desafio 7
 function catAndMouse(ratoP, gato1P, gato2P) {
-  let distanciaGato1
-  let distanciaGato2
+  let distanciaGato1;
+  let distanciaGato2;
   let frase;
   distanciaGato1 = Math.abs(ratoP - gato1P);
   distanciaGato2 = Math.abs(ratoP - gato2P);
@@ -66,20 +66,17 @@ function catAndMouse(ratoP, gato1P, gato2P) {
 // Desafio 8
 function fizzBuzz(entradaArray) {
   let resultado = [];
-  for(let index in entradaArray) {
-    if (entradaArray[index] % 3 == 0) {
-      if (entradaArray[index] % 5 == 0) {
-        resultado.push('fizzBuzz')
+  for (let index in entradaArray) {
+    if (entradaArray[index] % 3 === 0) {
+      if (entradaArray[index] % 5 === 0) {
+        resultado.push('fizzBuzz');
+      } else {
+        resultado.push('fizz');
       }
-      else {
-        resultado.push('fizz')
-      }
-    }
-    else if (entradaArray[index] % 5 == 0) {
-      resultado.push('buzz')
-    }
-    else {
-      resultado.push('bug!')
+    } else if (entradaArray[index] % 5 === 0) {
+      resultado.push('buzz');
+    } else {
+      resultado.push('bug!');
     }
   }
   return resultado;
@@ -87,45 +84,42 @@ function fizzBuzz(entradaArray) {
 
 // Desafio 9
 function encode(paraCodificar) {
-  paraCodificar = paraCodificar.replace(/a/g, "1");
-  paraCodificar = paraCodificar.replace(/e/g, "2");
-  paraCodificar = paraCodificar.replace(/i/g, "3");
-  paraCodificar = paraCodificar.replace(/o/g, "4");
-  let saida = paraCodificar.replace(/u/g, "5");
+  paraCodificar = paraCodificar.replace(/a/g, '1');
+  paraCodificar = paraCodificar.replace(/e/g, '2');
+  paraCodificar = paraCodificar.replace(/i/g, '3');
+  paraCodificar = paraCodificar.replace(/o/g, '4');
+  let saida = paraCodificar.replace(/u/g, '5');
   return saida;
 }
 function decode(paraDecodificar) {
-  paraDecodificar = paraDecodificar.replace(/1/g, "a");
-  paraDecodificar = paraDecodificar.replace(/2/g, "e");
-  paraDecodificar = paraDecodificar.replace(/3/g, "i");
-  paraDecodificar = paraDecodificar.replace(/4/g, "o");
-  let saida = paraDecodificar.replace(/5/g, "u");
+  paraDecodificar = paraDecodificar.replace(/1/g, 'a');
+  paraDecodificar = paraDecodificar.replace(/2/g, 'e');
+  paraDecodificar = paraDecodificar.replace(/3/g, 'i');
+  paraDecodificar = paraDecodificar.replace(/4/g, 'o');
+  let saida = paraDecodificar.replace(/5/g, 'u');
   return saida;
 }
 
 // Desafio 10
-function techList(arrayEntrada, stringEntrada) {
-let ordenado = arrayEntrada.sort();
-let tecnologias = [];
-let cont = 0;
-if (arrayEntrada.length === 0)
-{
-  let erro = "Vazio!";
-  return erro;
-}
-else {
-  for(let index of ordenado) {
-    let itens = {
-        tech: null,
-        name: null
-      }
-      itens.tech = index;  
-      itens.name = stringEntrada;
-      tecnologias.push(itens);
-      }
-    return tecnologias;
-  }   
-}
+  function techList(arrayEntrada, stringEntrada) {
+  let ordenado = arrayEntrada.sort();
+  let tecnologias = [];
+  if (arrayEntrada.length === 0) {
+    let erro = 'Vazio!';
+    return erro;
+  } else {
+    for(let index of ordenado) {
+      let itens = {
+          tech: null,
+          name: null
+        }
+        itens.tech = index;  
+        itens.name = stringEntrada;
+        tecnologias.push(itens);
+        }
+      return tecnologias;
+    }   
+  }
 
 module.exports = {
   calcArea,
