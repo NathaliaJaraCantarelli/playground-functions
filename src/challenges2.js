@@ -1,6 +1,6 @@
 // Desafio 11
 function generatePhoneNumber(numeros) {
-  let telefone;
+  let telefone = '(';
   let resposta;
   let numerosString = numeros.toString();
   let numPronto = numerosString.replace(/,/g, '');
@@ -14,7 +14,8 @@ function generatePhoneNumber(numeros) {
   } else if (condicao === 1) {
     resposta = 'não é possível gerar um número de telefone com esses valores';
   } else {
-    resposta = telefone.concat('(', numPronto.substring(0, 2), ') ' + numPronto.substring(2, 7), '-', numPronto.substring(7, 12));
+    resposta = telefone.concat(numPronto.substring(0, 2), ') ', numPronto.substring(2, 7));
+    resposta = telefone.concat('-', numPronto.substring(7, 12));
   }
   return resposta;
 }
@@ -44,7 +45,7 @@ function hydrate(recebida) {
   let hidratacao;
   for (let index of recebida) {
     for (let cont = 0; cont <= 9; cont += 1) {
-      if (index === cont) {
+      if (index == cont) {
         soma += cont;
       }
     }
