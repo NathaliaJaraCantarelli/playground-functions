@@ -45,12 +45,12 @@ function hydrate(recebida) {
   let hidratacao;
   for (let index of recebida) {
     for (let cont = 0; cont <= 9; cont += 1) {
-      if (index == cont) {
+      if (String(index) === cont) {
         soma += cont;
       }
     }
   }
-  let somaString = String(soma)
+  let somaString = String(soma);
   if (soma === 1) {
     hidratacao = somaString.concat(' copo de água');
   } else {
