@@ -1,57 +1,58 @@
 // Desafio 11
 function generatePhoneNumber(numeros) {
+  let telefone;
+  let resposta;
   let numerosString = numeros.toString();
-  let numPronto = numerosString.replace(/,/g, "");
+  let numPronto = numerosString.replace(/,/g, '');
   let condicao = 0;
   let conta = {};
   numeros.forEach(function (i) { conta[i] = (conta[i] || 0) + 1; });
   for (let index in conta) {
-    if (conta[index] >= 3) { condicao = 1; }
-    else if (index < 0 || index > 9) { condicao = 1; }
-  }
-  if (numeros.length != 11) {
-    let erro = 'Array com tamanho incorreto.';
-    return erro;
+    if ((conta[index] >= 3) || (index < 0) || (index > 9)) { condicao = 1; } }
+  if (numeros.length !== 11) {
+    resposta = 'Array com tamanho incorreto.';
   } else if (condicao === 1) {
-    let teste = 'não é possível gerar um número de telefone com esses valores';
-    return teste;
+    resposta = 'não é possível gerar um número de telefone com esses valores';
   } else {
-    let telefone = "(" + numPronto.substring(0, 2) + ") " + numPronto.substring(2, 7) + "-" + numPronto.substring(7, 12);;
-    return telefone;
+    resposta = telefone.concat('(', numPronto.substring(0, 2), ') ' + numPronto.substring(2, 7), '-', numPronto.substring(7, 12));
   }
+  return resposta;
 }
 
 // Desafio 12
 function triangleCheck(linhaA, linhaB, linhaC) {
-  if (linhaA < (linhaB+linhaC)) {
-    if (linhaA > Math.abs(linhaB-linhaC)) {
-      return true;
-    } else { return false; }
-  } else if (linhaB < (linhaA+linhaC)) {
-    if (linhaB > Math.abs(linhaA-linhaC)) {
-      return true;
-    } else { return false; }
-  } else if (linhaC < (linhaA+linhaB)) {
-    if (linhaC > Math.abs(linhaA-linhaB)) {
-      return true;
-    } else { return false; }
-  } else { return false; }
+  let resultado;
+  if (linhaA < (linhaB + linhaC)) {
+    if (linhaA > Math.abs(linhaB - linhaC)) {
+      resultado = true;
+    } else { resultado = false; }
+  } else if (linhaB < (linhaA + linhaC)) {
+    if (linhaB > Math.abs(linhaA - linhaC)) {
+      resultado = true;
+    } else { resultado = false; }
+  } else if (linhaC < (linhaA + linhaB)) {
+    if (linhaC > Math.abs(linhaA - linhaB)) {
+      resultado = true;
+    } else { resultado = false; }
+  } else { resultado = false; }
+  return resultado;
 }
 
 // Desafio 13
 function hydrate(recebida) {
   let soma = 0;
+  let hidratacao;
   for (let index of recebida) {
     for (let cont = 0; cont <= 9; cont += 1) {
-      if(index === cont){
+      if (index === cont) {
         soma += cont;
       }
     }
   }
   if (soma === 1) {
-    let hidratacao = soma.concat(' copo de água');
+    hidratacao = soma.concat(' copo de água');
   } else {
-    let hidratacao = soma.concat(' copos de água');
+    hidratacao = soma.concat(' copos de água');
   }
   return hidratacao;
 }
