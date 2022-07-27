@@ -70,9 +70,9 @@ function fizzBuzz(entradaArray) {
   let resultado = [];
   for (let index in entradaArray) {
     if ((entradaArray[index] % 3 === 0) && (entradaArray[index] % 5 === 0)) {
-        resultado.push('fizzBuzz');
+      resultado.push('fizzBuzz');
     } else if (entradaArray[index] % 3 === 0) {
-        resultado.push('fizz');
+      resultado.push('fizz');
     } else if (entradaArray[index] % 5 === 0) {
       resultado.push('buzz');
     } else {

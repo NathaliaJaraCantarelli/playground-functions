@@ -24,44 +24,36 @@ function generatePhoneNumber(numeros) {
 // Desafio 12
 function triangleCheck(linhaA, linhaB, linhaC) {
   if (linhaA < (linhaB+linhaC)) {
-    if (linhaA > Math.abs(linhaB-linhaC)){
+    if (linhaA > Math.abs(linhaB-linhaC)) {
       return true;
-    }
-    else {return false;}
-  }
-  else if (linhaB < (linhaA+linhaC)) {
-    if (linhaB > Math.abs(linhaA-linhaC)){
+    } else { return false; }
+  } else if (linhaB < (linhaA+linhaC)) {
+    if (linhaB > Math.abs(linhaA-linhaC)) {
       return true;
-    }
-    else {return false;}
-  }
-  else if (linhaC < (linhaA+linhaB)) {
-    if (linhaC > Math.abs(linhaA-linhaB)){
+    } else { return false; }
+  } else if (linhaC < (linhaA+linhaB)) {
+    if (linhaC > Math.abs(linhaA-linhaB)) {
       return true;
-    }
-    else {return false;}
-  }
-  else {return false;}
+    } else { return false; }
+  } else { return false; }
 }
 
 // Desafio 13
 function hydrate(recebida) {
   let soma = 0;
-  for (let index of recebida){
-    for(let cont=0; cont<=9; cont++){
-      if(index==cont){
-        soma+=cont;
+  for (let index of recebida) {
+    for (let cont = 0; cont <= 9; cont += 1) {
+      if(index === cont){
+        soma += cont;
       }
     }
   }
-  if(soma === 1) {
-    let hidratacao = soma + " copo de água"
-    return hidratacao;
+  if (soma === 1) {
+    let hidratacao = soma.concat(' copo de água');
+  } else {
+    let hidratacao = soma.concat(' copos de água');
   }
-  else {
-    let hidratacao = soma + " copos de água"
-    return hidratacao;
-  }
+  return hidratacao;
 }
 
 module.exports = {
