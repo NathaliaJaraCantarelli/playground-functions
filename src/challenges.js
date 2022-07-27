@@ -23,7 +23,7 @@ function splitSentence(frase) {
 
 // Desafio 4
 function concatName(arrayConcat) {
-  let fraseConcat = arrayConcat[arrayConcat.length - 1] + ', ' + arrayConcat[0];
+  let fraseConcat = arrayConcat[arrayConcat.length - 1].concat(', ', arrayConcat[0]);
   return fraseConcat;
 }
 
@@ -69,12 +69,10 @@ function catAndMouse(ratoP, gato1P, gato2P) {
 function fizzBuzz(entradaArray) {
   let resultado = [];
   for (let index in entradaArray) {
-    if (entradaArray[index] % 3 === 0) {
-      if (entradaArray[index] % 5 === 0) {
+    if ((entradaArray[index] % 3 === 0) && (entradaArray[index] % 5 === 0)) {
         resultado.push('fizzBuzz');
-      } else {
+    } else if (entradaArray[index] % 3 === 0) {
         resultado.push('fizz');
-      }
     } else if (entradaArray[index] % 5 === 0) {
       resultado.push('buzz');
     } else {
@@ -104,20 +102,20 @@ function decode(paraDecodificar) {
 
 // Desafio 10
 function techList(arrayEntrada, stringEntrada) {
-let ordenado = arrayEntrada.sort();
-let tecnologias = [];
-if (arrayEntrada.length === 0) {
-  tecnologias = 'Vazio!';
-} else {
-  for (let index of ordenado) {
-    let itens = {
+  let ordenado = arrayEntrada.sort();
+  let tecnologias = [];
+  if (arrayEntrada.length === 0) {
+    tecnologias = 'Vazio!';
+  } else {
+    for (let index of ordenado) {
+      let itens = {
         tech: null,
-        name: null
+        name: null,
       };
       itens.tech = index;
       itens.name = stringEntrada;
       tecnologias.push(itens);
-      }
+    }
   }
   return tecnologias;
 }

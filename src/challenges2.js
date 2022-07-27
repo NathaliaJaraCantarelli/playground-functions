@@ -6,7 +6,6 @@ function generatePhoneNumber(numeros) {
   let conta = {};
   numeros.forEach(function (i) { conta[i] = (conta[i] || 0) + 1; });
   for (let index in conta) {
-    console.log(index, conta[index])
     if (conta[index] >= 3) { condicao = 1; }
     else if (index < 0 || index > 9) { condicao = 1; }
   }
@@ -17,10 +16,7 @@ function generatePhoneNumber(numeros) {
     let teste = 'não é possível gerar um número de telefone com esses valores';
     return teste;
   } else {
-    let ddd = numPronto.substring(0, 2);
-    let primeiro = numPronto.substring(2, 7);
-    let segundo = numPronto.substring(7, 12);
-    let telefone = "(" + ddd + ") " + primeiro + "-" + segundo;
+    let telefone = "(" + numPronto.substring(0, 2) + ") " + numPronto.substring(2, 7) + "-" + numPronto.substring(7, 12);;
     return telefone;
   }
 }
