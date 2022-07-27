@@ -1,10 +1,12 @@
 // Desafio 1
 function compareTrue(entrada1, entrada2) {
+  let retorno;
   if ((entrada1 === true) && (entrada2 === true)) {
-    return true;
+    retorno = true;
   } else {
-    return false;
+    retorno = false;
   }
+  return retorno;
 }
 
 // Desafio 2
@@ -101,25 +103,24 @@ function decode(paraDecodificar) {
 }
 
 // Desafio 10
-  function techList(arrayEntrada, stringEntrada) {
-  let ordenado = arrayEntrada.sort();
-  let tecnologias = [];
-  if (arrayEntrada.length === 0) {
-    let erro = 'Vazio!';
-    return erro;
-  } else {
-    for(let index of ordenado) {
-      let itens = {
-          tech: null,
-          name: null
-        }
-        itens.tech = index;  
-        itens.name = stringEntrada;
-        tecnologias.push(itens);
-        }
-      return tecnologias;
-    }   
+function techList(arrayEntrada, stringEntrada) {
+let ordenado = arrayEntrada.sort();
+let tecnologias = [];
+if (arrayEntrada.length === 0) {
+  tecnologias = 'Vazio!';
+} else {
+  for (let index of ordenado) {
+    let itens = {
+        tech: null,
+        name: null
+      };
+      itens.tech = index;
+      itens.name = stringEntrada;
+      tecnologias.push(itens);
+      }
   }
+  return tecnologias;
+}
 
 module.exports = {
   calcArea,

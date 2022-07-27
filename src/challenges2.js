@@ -2,7 +2,6 @@
 function generatePhoneNumber(numeros) {
   let numerosString = numeros.toString();
   let numPronto = numerosString.replace(/,/g, "");
-  let teste;
   let condicao = 0;
   let conta = {};
   numeros.forEach(function (i) { conta[i] = (conta[i] || 0) + 1; });
@@ -14,18 +13,13 @@ function generatePhoneNumber(numeros) {
   if (numeros.length != 11) {
     let erro = 'Array com tamanho incorreto.';
     return erro;
-  }
-  else if (condicao === 1) {
-    teste = 'não é possível gerar um número de telefone com esses valores';
+  } else if (condicao === 1) {
+    let teste = 'não é possível gerar um número de telefone com esses valores';
     return teste;
-  }
-  else {
+  } else {
     let ddd = numPronto.substring(0, 2);
-    console.log(ddd);
     let primeiro = numPronto.substring(2, 7);
-    console.log(primeiro);
     let segundo = numPronto.substring(7, 12);
-    console.log(segundo);
     let telefone = "(" + ddd + ") " + primeiro + "-" + segundo;
     return telefone;
   }
