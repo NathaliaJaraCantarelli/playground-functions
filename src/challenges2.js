@@ -45,7 +45,7 @@ function hydrate(recebida) {
   let hidratacao;
   for (let index of recebida) {
     for (let cont = 0; cont <= 9; cont += 1) {
-      if (String(index) === cont) {
+      if (index == cont) {
         soma += cont;
       }
     }
